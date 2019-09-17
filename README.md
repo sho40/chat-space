@@ -9,7 +9,7 @@
 
 ### Association
 - has_many :groups, trough: :members
-- has_many :massages
+- has_many :messages
 - has_many :members
 
 
