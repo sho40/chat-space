@@ -1,0 +1,31 @@
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name sho40
+        .side-header__box__menu
+          = fa_icon 'edit', class: "side-header__box__menu"
+          %span<>
+          = fa_icon 'cog', class: "side-header__box__menu"
+          %span<>
+    .groups
+      = render "group", locals: {group: @group}
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group f
+        %ul.main-header__left-box__member-list sho40 
+      .main-header__edit-btn Edit
+    .messages
+      .message
+        = render partial: "message", locals: { message: @message }
+    .form
+      %form.new_message
+        .input-box 
+          %input.input-box__text{name: "message[content]", placeholder: "type a message", :type => "text"}
+          %label.input-box__image{for: "message_image"}
+            =fa_icon 'image'
+            %input.input-box__image__file{type: "file", name: "message[image]", id: "message_image"}
+        %input{type: "submit", value: "Send",class: "submit-btn"}
+
+
