@@ -3,11 +3,14 @@
     .side-header
       .side-header__box
         %p.side-header__box__user-name sho40
-        .side-header__box__menu
-          = fa_icon 'edit', class: "side-header__box__menu"
-          %span<>
-          = fa_icon 'cog', class: "side-header__box__menu"
-          %span<>
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__new-group
+            = fa_icon 'edit'
+            %span<>
+          %li.side-header__box__menu__edit-user
+            = link_to edit_user_path(current_user) do
+              = fa_icon 'cog', class: 'icon'
+              %span<>
     .groups
       = render "group", locals: {group: @group}
   .chat-main

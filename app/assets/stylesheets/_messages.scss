@@ -23,7 +23,13 @@ $white: #ffffff;
         float: left;
         justify-content: space-between;
         &__menu{
-          margin-left: 0.3rem;
+          display: flex;
+          &__edit-user {
+            margin-left: 0.3rem;
+            .icon {
+              color: $white;
+            }
+          }
         }
       }
     }
