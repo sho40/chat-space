@@ -24,8 +24,16 @@ $white: #ffffff;
         justify-content: space-between;
         &__menu{
           display: flex;
+          &__new-group {
+            margin-left: 0.3rem;
+            font-size: inherit;
+            .icon {
+              color: $white;
+            }
+          }
           &__edit-user {
             margin-left: 0.3rem;
+            font-size: inherit;
             .icon {
               color: $white;
             }
