@@ -134,13 +134,11 @@ $white: #ffffff;
         .input-box {
           width: 100%;
           position: relative;
-          &__text {
-            padding: 0 40px 0 10px;
-            color: #434a54;
-            height: 50px;
-            border-style: none;
-            width: 100%
-          }
+          padding: 0 40px 0 10px;
+          color: #434a54;
+          height: 50px;
+          border-style: none;
+          width: 100%;
           &__image {
             font-size: 1.3rem;
             position: absolute;

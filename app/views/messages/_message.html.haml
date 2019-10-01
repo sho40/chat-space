@@ -1,5 +1,12 @@
-.message__upper-info
-  %P.message__upper-info__talker sho40
-  %P.message__upper-info__date 2019/09/22(sun) 23:29:15
-%p.message__text hello!
+.message
+  .message__upper-info
+    .message__upper-info__talker
+      = message.user.nickname
+    .message__upper-info__date 2019/09/22(sun) 23:29:15
+      = message.created_at.strftime("%y/%m/%d %H:%M")
+  .message__text
+    - if message.content.present?
+      %p.message__text__content
+        = message.content
+    = image_tag message.image.url, class: 'message__text__image' if message.image.present?
 
