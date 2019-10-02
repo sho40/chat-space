@@ -1,6 +1,5 @@
 .wrapper
-  .chat-side
-    = render 'side_bar'
+  = render 'side_bar'
   .chat-main
     .main-header
       .main-header__left-box
@@ -10,10 +9,10 @@
     .messages
       = render @messages
     .form
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'new_message', placeholder: 'type a message'
-          .input-box 
-            = f.label :image, class: 'input-box__image' do
-              = fa_icon 'image'
-              = f.file_field :image, class: 'input-box__image__file' 
-          = f.submit 'Send', class: 'submit-btn' 
+      = form_for [@group,@message] do |f|
+        .input-box 
+          = f.text_field :content, class: 'new_message', placeholder: 'type a message'
+          = f.label :image, class: 'input-box__image' do
+            = fa_icon 'image'
+            = f.file_field :image, class: 'input-box__image__file' 
+        = f.submit 'Send', class: 'submit-btn' 

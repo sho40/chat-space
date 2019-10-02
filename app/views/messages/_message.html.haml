@@ -1,8 +1,9 @@
+
 .message
   .message__upper-info
     .message__upper-info__talker
       = message.user.nickname
-    .message__upper-info__date 2019/09/22(sun) 23:29:15
+    .message__upper-info__date 
       = message.created_at.strftime("%y/%m/%d %H:%M")
   .message__text
     - if message.content.present?
