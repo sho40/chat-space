@@ -9,7 +9,7 @@
           - @group.users.each do |group_users|
             = group_users.nickname
 
-      .main-header__edit-btn Edit
+      = link_to "Edit", edit_group_path(@group), class: "main-header__edit-btn"
     .messages
       = render @messages
     .form
