@@ -5,7 +5,7 @@ $(function(){
     var html = `<div class="message" data-id="${message.id}">
                   <div class="message__upper-info">
                     <p class="message__upper-info__talker">
-                      ${message.user_name}
+                      ${message.user_nickname}
                     </p>
                     <p class="message__upper-info__date">
                       ${message.date}
@@ -36,6 +36,7 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html)
       $('.message_content').val('')
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
     })
     .fail(function(data){
       alert('エラーが発生したためメッセージは送信できませんでした。');
