@@ -1,22 +1,23 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
+// $(function(){
   function buildHTML(message) {
     var content = message.content ? `${ message.content }` : "";
     var img = message.image ? `<img src= ${ message.image }>` : "";
-    var html = `<div class="message" data-id="${message.id}">
+    var html = `<div class="message">
                   <div class="message__upper-info">
-                    <p class="message__upper-info__talker">
-                      ${message.user_nickname}
-                    </p>
-                    <p class="message__upper-info__date">
-                      ${message.date}
-                    </p>
+                  <div class="message__upper-info__talker">
+                    ${message.user_nickname}
                   </div>
-                  <p class="message__text">
-                    <div>
-                    ${content}
-                    </div>
+                  <div class="message__upper-info__date">
+                    ${message.date}
+                  </div>
+                  </div>
+                  <div class="message__text">
+                  <p class="message__text__content">
+                    ${message.content}
                     ${img}
                   </p>
+                  </div>
                 </div>`
   return html;
   }
@@ -35,7 +36,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('.message_content').val('')
+      $('#new_message')[0].reset();
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight});
     })
     .fail(function(data){
