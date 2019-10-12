@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+  
+  def index
+    respond_to do |fomat|
+      fomat.html
+      fomat.json
+  end
+
   def edit
   end
 
