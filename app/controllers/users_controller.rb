@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     respond_to do |fomat|
       fomat.html
       fomat.json
+    end
   end
 
   def edit
@@ -16,6 +17,8 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  private
 
   def user_params
     params.require(:user).permit(:nickname, :email)
