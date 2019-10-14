@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   
   def index
-    respond_to do |fomat|
-      fomat.html
-      fomat.json
+    @users = User.where('nickname LIKE(?) and id != ?', "%#{params[:keyword]}%" ,current_user.id)
+    respond_to do |format|
+      format.html
+      format.json
     end
   end
 

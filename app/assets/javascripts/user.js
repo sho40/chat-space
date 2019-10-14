@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function(){
 
   var search_list = $("#user-search-result");
   var member_list = $("#member_search_result");
@@ -9,7 +9,7 @@ $(function() {
                 <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${ user.id }" data-user-name=${ user.nickname }>追加</a>
               </div>`
 
-　　 search_list.append(html);
+    search_list.append(html);
     return html;
    }
 
@@ -20,7 +20,7 @@ $(function() {
                 <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
               </div>`
 
-　　 member_list.append(html);
+    member_list.append(html);
   }
 
   function appendNoUsers(info) {
@@ -60,13 +60,13 @@ $(function() {
 
     $(function(){
       $(document).on('click', '.user-search-add', function() {
-        var name = $(this).data("user-nickname");
+        var name = $(this).data("user-name");
         var user_id = $(this).data("user-id");
         $(this).parent().remove();
         appendMembers(name, user_id);
       });
 
-　    $(document).on("click", '.user-search-remove', function() {
+      $(document).on("click", '.user-search-remove', function() {
         $(this).parent().remove();
       });
     });
