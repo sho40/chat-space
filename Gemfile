@@ -43,7 +43,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry-rails'
-  
+
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
@@ -73,4 +73,5 @@ gem 'devise'
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog-aws'
 
